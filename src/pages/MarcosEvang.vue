@@ -296,6 +296,7 @@ export default {
   },
 
   setup() {
+    const counter = ref(0)
     const step = ref(1)
     const disbtn1 = ref(true)
     const done1 = ref(false)
@@ -376,7 +377,20 @@ export default {
         step.value = 1
       },
 
-      handleResult() {},
+      handleResult(cap) {
+        counter.value = counter.value + 1
+        switch (cap) {
+          case 1:
+            if (counter.value === 7) {
+              counter.value = 0
+              disbtn1.value = false
+            }
+            break
+
+          default:
+            break
+        }
+      },
     }
   },
 }

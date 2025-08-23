@@ -54,6 +54,7 @@
       v-bind:options="options7"
       @update:selectedOption="handleSelectedOption"
       v-bind:anwser="'op7_3'"
+      v-bind:selectedVal="opt7"
     />
   </div>
 </template>
@@ -62,13 +63,15 @@
 import { ref } from 'vue'
 import BloquePreg from 'components/BloquePreg.vue'
 
+const emit = defineEmits(['update:selectedOption'])
+
 const opt1 = ref('')
 const opt2 = ref('')
 const opt3 = ref('')
 const opt4 = ref('')
 const opt5 = ref('')
 const opt6 = ref('')
-const opt7 = ref('')
+const opt7 = ref('op7_4')
 
 const options1 = ref([
   {
@@ -205,6 +208,7 @@ const options7 = ref([
 ])
 
 const handleSelectedOption = (questionnum, selectedValue) => {
+  emit('update:selectedOption', 1)
   switch (questionnum) {
     case 1:
       opt1.value = selectedValue
@@ -231,8 +235,6 @@ const handleSelectedOption = (questionnum, selectedValue) => {
       break
   }
 }
-
-//const validateAwnsers = () => {}
 </script>
 
 <style>
