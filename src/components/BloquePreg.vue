@@ -19,14 +19,8 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
-onMounted(() => {
-  if (props.selectedVal) {
-    opt.value = props.selectedVal
-    disable.value = true
-    showCorrect(props.selectedVal)
-  }
-})
+import { ref, watch } from 'vue'
+
 const disable = ref(false)
 const opt = ref('')
 const isCorrect = ref(true)
@@ -54,6 +48,17 @@ const props = defineProps({
     type: String,
   },
 })
+
+watch(
+  () => props.selectedVal,
+  (newVal) => {
+    if (newVal) {
+      opt.value = newVal
+      disable.value = true
+      showCorrect(newVal)
+    }
+  },
+)
 
 const showCorrect = (selectedValue) => {
   isCorrect.value = props.anwser != selectedValue ? false : true

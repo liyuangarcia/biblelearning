@@ -6,6 +6,7 @@
       v-bind:options="options1"
       @update:selectedOption="handleSelectedOption"
       v-bind:anwser="'op1_2'"
+      v-bind:selectedVal="opt1"
     />
 
     <BloquePreg
@@ -14,6 +15,7 @@
       v-bind:options="options2"
       @update:selectedOption="handleSelectedOption"
       v-bind:anwser="'op2_1'"
+      v-bind:selectedVal="opt2"
     />
 
     <BloquePreg
@@ -22,6 +24,7 @@
       v-bind:options="options3"
       @update:selectedOption="handleSelectedOption"
       v-bind:anwser="'op3_3'"
+      v-bind:selectedVal="opt3"
     />
 
     <BloquePreg
@@ -30,6 +33,7 @@
       v-bind:options="options4"
       @update:selectedOption="handleSelectedOption"
       v-bind:anwser="'op4_2'"
+      v-bind:selectedVal="opt4"
     />
 
     <BloquePreg
@@ -38,6 +42,7 @@
       v-bind:options="options5"
       @update:selectedOption="handleSelectedOption"
       v-bind:anwser="'op5_4'"
+      v-bind:selectedVal="opt5"
     />
 
     <BloquePreg
@@ -46,6 +51,7 @@
       v-bind:options="options6"
       @update:selectedOption="handleSelectedOption"
       v-bind:anwser="'op6_1'"
+      v-bind:selectedVal="opt6"
     />
 
     <BloquePreg
@@ -60,8 +66,13 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import BloquePreg from 'components/BloquePreg.vue'
+import { db } from 'src/db/db'
+
+onMounted(async () => {
+  await loadResponse()
+})
 
 const emit = defineEmits(['update:selectedOption'])
 
@@ -71,7 +82,7 @@ const opt3 = ref('')
 const opt4 = ref('')
 const opt5 = ref('')
 const opt6 = ref('')
-const opt7 = ref('op7_4')
+const opt7 = ref('')
 
 const options1 = ref([
   {
@@ -207,8 +218,56 @@ const options7 = ref([
   },
 ])
 
+const findResponse = async (cap, question) => {
+  try {
+    const record = await db.marcos.where('[cap+question]').equals([cap, question]).first()
+    return (record && record.value) || null
+  } catch (error) {
+    console.error('Error buscando registro:', error)
+    return null
+  }
+}
+
+const loadResponse = async () => {
+  try {
+    opt1.value = await findResponse(1, 1)
+    opt2.value = await findResponse(1, 2)
+    opt3.value = await findResponse(1, 3)
+    opt4.value = await findResponse(1, 4)
+    opt5.value = await findResponse(1, 5)
+    opt6.value = await findResponse(1, 6)
+    opt7.value = await findResponse(1, 7)
+  } catch (error) {
+    console.error('Error buscando registro:', error)
+    return null
+  }
+}
+
+const addResponse = async (cap, questionnum, resp) => {
+  const find = await findResponse(cap, questionnum)
+  if (find) {
+    try {
+      await db.marcos
+        .where('[cap+question]')
+        .equals([cap, questionnum])
+        .modify((record) => {
+          record.value = resp
+        })
+    } catch (error) {
+      console.error('Error en actualización con transformación:', error)
+    }
+  } else {
+    await db.marcos.add({
+      cap: cap,
+      question: questionnum,
+      value: resp,
+    })
+  }
+}
+
 const handleSelectedOption = (questionnum, selectedValue) => {
   emit('update:selectedOption', 1)
+  addResponse(1, questionnum, selectedValue)
   switch (questionnum) {
     case 1:
       opt1.value = selectedValue
