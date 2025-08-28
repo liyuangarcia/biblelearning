@@ -1,7 +1,5 @@
 <template>
   <div class="q-pa-md">
-    <q-btn label="Reset" push color="white" text-color="primary" @click="reset" class="q-mb-md" />
-
     <q-banner class="bg-primary text-white"> Evangelio San Marcos {{ step }}</q-banner>
 
     <q-stepper v-model="step" ref="stepper" color="primary" animated contracted>
@@ -26,7 +24,10 @@
       </q-step>
 
       <q-step :name="2" prefix="2" title="Cap. 2" caption="Marcos" :done="done2">
-        An ad group contains one or more ads which target a shared set of keywords.
+        <MarcosEvang2
+          @update:selectedOption="handleResult"
+          @update:enableBtOnLoad="enableBtOnLoad"
+        />
 
         <q-stepper-navigation>
           <q-btn
@@ -38,6 +39,7 @@
             "
             color="primary"
             label="Continue"
+            :disable="disbtn2"
           />
           <q-btn flat @click="step = 1" color="primary" label="Back" class="q-ml-sm" />
         </q-stepper-navigation>
@@ -292,12 +294,14 @@
 <script setup>
 import { ref } from 'vue'
 import MarcosEvang1 from 'components/MarcosEvang1.vue'
+import MarcosEvang2 from 'components/MarcosEvang2.vue'
 import { Funcs } from 'src/others/funcs'
 
 const { countCaps } = Funcs()
 
 const step = ref(1)
 const disbtn1 = ref(true)
+const disbtn2 = ref(true)
 const done1 = ref(false)
 const done2 = ref(false)
 const done3 = ref(false)
@@ -315,31 +319,15 @@ const done14 = ref(false)
 const done15 = ref(false)
 const done16 = ref(false)
 
-const reset = () => {
-  done1.value = false
-  done2.value = false
-  done3.value = false
-  done4.value = false
-  done5.value = false
-  done6.value = false
-  done7.value = false
-  done8.value = false
-  done9.value = false
-  done10.value = false
-  done11.value = false
-  done12.value = false
-  done13.value = false
-  done14.value = false
-  done15.value = false
-  done16.value = false
-  step.value = 1
-}
-
 const handleResult = async (cap) => {
-  const cap1 = await countCaps(cap, 'marcos')
-  console.log('cap1', cap1)
-  if (cap1 === 7) {
+  const caps = await countCaps(cap, 'marcos')
+
+  if ((cap === 1) & (caps === 7)) {
     disbtn1.value = false
+  }
+
+  if ((cap === 2) & (caps === 12)) {
+    disbtn2.value = false
   }
 }
 
@@ -347,6 +335,9 @@ const enableBtOnLoad = (cap) => {
   switch (cap) {
     case 1:
       disbtn1.value = false
+      break
+    case 2:
+      disbtn2.value = false
       break
 
     default:

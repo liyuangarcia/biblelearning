@@ -4,7 +4,7 @@
       <q-toolbar>
         <q-btn flat dense round icon="menu" aria-label="Menu" @click="toggleLeftDrawer" />
 
-        <q-toolbar-title> Bible Learning </q-toolbar-title>
+        <q-toolbar-title> Bible Learning (Evangelios)</q-toolbar-title>
 
         <div>v1.0.0</div>
       </q-toolbar>
@@ -30,9 +30,34 @@ import EssentialLink from 'components/EssentialLink.vue'
 
 const linksList = [
   {
-    title: 'San Marcos',
+    title: 'Mateo',
+    icon: 'book',
+    link: '/mateo',
+  },
+  {
+    title: 'Marcos',
     icon: 'book',
     link: '/marcos',
+  },
+  {
+    title: 'Lucas',
+    icon: 'book',
+    link: '/lucas',
+  },
+  {
+    title: 'Juan',
+    icon: 'book',
+    link: '/juan',
+  },
+  {
+    title: 'Preferencias',
+    icon: 'settings',
+    link: '/settings',
+  },
+  {
+    title: 'Acerca de',
+    icon: 'info',
+    link: '/about',
   },
 ]
 
