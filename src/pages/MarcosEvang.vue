@@ -6,7 +6,10 @@
 
     <q-stepper v-model="step" ref="stepper" color="primary" animated contracted>
       <q-step :name="1" prefix="1" title="Cap. 1" caption="Marcos" :done="done1">
-        <MarcosEvang1 @update:selectedOption="handleResult" />
+        <MarcosEvang1
+          @update:selectedOption="handleResult"
+          @update:enableBtOnLoad="enableBtOnLoad"
+        />
         <q-stepper-navigation>
           <q-btn
             @click="
@@ -286,112 +289,68 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import { ref } from 'vue'
 import MarcosEvang1 from 'components/MarcosEvang1.vue'
+import { Funcs } from 'src/others/funcs'
 
-export default {
-  components: {
-    MarcosEvang1,
-  },
+const { countCaps } = Funcs()
 
-  setup() {
-    const counter = ref(0)
-    const step = ref(1)
-    const disbtn1 = ref(true)
-    const done1 = ref(false)
-    const done2 = ref(false)
-    const done3 = ref(false)
-    const done4 = ref(false)
-    const done5 = ref(false)
-    const done6 = ref(false)
-    const done7 = ref(false)
-    const done8 = ref(false)
-    const done9 = ref(false)
-    const done10 = ref(false)
-    const done11 = ref(false)
-    const done12 = ref(false)
-    const done13 = ref(false)
-    const done14 = ref(false)
-    const done15 = ref(false)
-    const done16 = ref(false)
+const step = ref(1)
+const disbtn1 = ref(true)
+const done1 = ref(false)
+const done2 = ref(false)
+const done3 = ref(false)
+const done4 = ref(false)
+const done5 = ref(false)
+const done6 = ref(false)
+const done7 = ref(false)
+const done8 = ref(false)
+const done9 = ref(false)
+const done10 = ref(false)
+const done11 = ref(false)
+const done12 = ref(false)
+const done13 = ref(false)
+const done14 = ref(false)
+const done15 = ref(false)
+const done16 = ref(false)
 
-    return {
-      step,
-      disbtn1,
-      done1,
-      done2,
-      done3,
-      done4,
-      done5,
-      done6,
-      done7,
-      done8,
-      done9,
-      done10,
-      done11,
-      done12,
-      done13,
-      done14,
-      done15,
-      done16,
+const reset = () => {
+  done1.value = false
+  done2.value = false
+  done3.value = false
+  done4.value = false
+  done5.value = false
+  done6.value = false
+  done7.value = false
+  done8.value = false
+  done9.value = false
+  done10.value = false
+  done11.value = false
+  done12.value = false
+  done13.value = false
+  done14.value = false
+  done15.value = false
+  done16.value = false
+  step.value = 1
+}
 
-      group: ref(''),
+const handleResult = async (cap) => {
+  const cap1 = await countCaps(cap, 'marcos')
+  console.log('cap1', cap1)
+  if (cap1 === 7) {
+    disbtn1.value = false
+  }
+}
 
-      options: [
-        {
-          label: 'Pedro',
-          value: 'op1',
-        },
-        {
-          label: 'Juan el Bautista',
-          value: 'op2',
-        },
-        {
-          label: 'Pablo',
-          value: 'op3',
-        },
-        {
-          label: 'Isaías',
-          value: 'op4',
-        },
-      ],
+const enableBtOnLoad = (cap) => {
+  switch (cap) {
+    case 1:
+      disbtn1.value = false
+      break
 
-      reset() {
-        done1.value = false
-        done2.value = false
-        done3.value = false
-        done4.value = false
-        done5.value = false
-        done6.value = false
-        done7.value = false
-        done8.value = false
-        done9.value = false
-        done10.value = false
-        done11.value = false
-        done12.value = false
-        done13.value = false
-        done14.value = false
-        done15.value = false
-        done16.value = false
-        step.value = 1
-      },
-
-      handleResult(cap) {
-        counter.value = counter.value + 1
-        switch (cap) {
-          case 1:
-            if (counter.value === 7) {
-              counter.value = 0
-              disbtn1.value = false
-            }
-            break
-
-          default:
-            break
-        }
-      },
-    }
-  },
+    default:
+      break
+  }
 }
 </script>

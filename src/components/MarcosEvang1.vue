@@ -3,7 +3,7 @@
     <BloquePreg
       v-bind:number="1"
       v-bind:question="'¿Quién preparó el camino para Jesús según Marcos 1?'"
-      v-bind:options="options1"
+      v-bind:options="marcos_cap1_options1"
       @update:selectedOption="handleSelectedOption"
       v-bind:anwser="'op1_2'"
       v-bind:selectedVal="opt1"
@@ -12,7 +12,7 @@
     <BloquePreg
       v-bind:number="2"
       v-bind:question="'Marcos 1 cita una profecía del Antiguo Testamento. ¿De qué profeta proviene?'"
-      v-bind:options="options2"
+      v-bind:options="marcos_cap1_options2"
       @update:selectedOption="handleSelectedOption"
       v-bind:anwser="'op2_1'"
       v-bind:selectedVal="opt2"
@@ -21,7 +21,7 @@
     <BloquePreg
       v-bind:number="3"
       v-bind:question="'Juan el Bautista bautizaba en el río:'"
-      v-bind:options="options3"
+      v-bind:options="marcos_cap1_options3"
       @update:selectedOption="handleSelectedOption"
       v-bind:anwser="'op3_3'"
       v-bind:selectedVal="opt3"
@@ -30,7 +30,7 @@
     <BloquePreg
       v-bind:number="4"
       v-bind:question="'¿Qué ocurrió inmediatamente después del bautismo de Jesús?'"
-      v-bind:options="options4"
+      v-bind:options="marcos_cap1_options4"
       @update:selectedOption="handleSelectedOption"
       v-bind:anwser="'op4_2'"
       v-bind:selectedVal="opt4"
@@ -39,7 +39,7 @@
     <BloquePreg
       v-bind:number="5"
       v-bind:question="'¿Cuántos días estuvo Jesús en el desierto?'"
-      v-bind:options="options5"
+      v-bind:options="marcos_cap1_options5"
       @update:selectedOption="handleSelectedOption"
       v-bind:anwser="'op5_4'"
       v-bind:selectedVal="opt5"
@@ -48,7 +48,7 @@
     <BloquePreg
       v-bind:number="6"
       v-bind:question="'¿Cuál fue el primer mensaje público de Jesús según Marcos?'"
-      v-bind:options="options6"
+      v-bind:options="marcos_cap1_options6"
       @update:selectedOption="handleSelectedOption"
       v-bind:anwser="'op6_1'"
       v-bind:selectedVal="opt6"
@@ -57,7 +57,7 @@
     <BloquePreg
       v-bind:number="7"
       v-bind:question="'¿A quiénes llamó Jesús como sus primeros discípulos?'"
-      v-bind:options="options7"
+      v-bind:options="marcos_cap1_options7"
       @update:selectedOption="handleSelectedOption"
       v-bind:anwser="'op7_3'"
       v-bind:selectedVal="opt7"
@@ -68,13 +68,26 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import BloquePreg from 'components/BloquePreg.vue'
-import { db } from 'src/db/db'
+import { Funcs } from 'src/others/funcs'
+import { Options } from 'src/others/options'
+
+const { countCaps, findResponse, addResponse } = Funcs()
+const {
+  marcos_cap1_options1,
+  marcos_cap1_options2,
+  marcos_cap1_options3,
+  marcos_cap1_options4,
+  marcos_cap1_options5,
+  marcos_cap1_options6,
+  marcos_cap1_options7,
+} = Options()
 
 onMounted(async () => {
   await loadResponse()
+  await enableBtOnLoad()
 })
 
-const emit = defineEmits(['update:selectedOption'])
+const emit = defineEmits(['update:selectedOption', 'update:enableBtOnLoad'])
 
 const opt1 = ref('')
 const opt2 = ref('')
@@ -84,190 +97,29 @@ const opt5 = ref('')
 const opt6 = ref('')
 const opt7 = ref('')
 
-const options1 = ref([
-  {
-    label: 'Pedro',
-    value: 'op1_1',
-  },
-  {
-    label: 'Juan el Bautista',
-    value: 'op1_2',
-  },
-  {
-    label: 'Pablo',
-    value: 'op1_3',
-    class: 'special-option',
-  },
-  {
-    label: 'Isaías',
-    value: 'op1_4',
-  },
-])
-
-const options2 = ref([
-  {
-    label: 'Isaías',
-    value: 'op2_1',
-  },
-  {
-    label: 'Moisés',
-    value: 'op2_2',
-  },
-  {
-    label: 'David',
-    value: 'op2_3',
-  },
-  {
-    label: 'Jeremías',
-    value: 'op2_4',
-  },
-])
-
-const options3 = ref([
-  {
-    label: 'Éufrates',
-    value: 'op3_1',
-  },
-  {
-    label: 'Tigris',
-    value: 'op3_2',
-  },
-  {
-    label: 'Jordán',
-    value: 'op3_3',
-  },
-  {
-    label: 'Nilo',
-    value: 'op3_4',
-  },
-])
-
-const options4 = ref([
-  {
-    label: 'Subió a Jerusalén',
-    value: 'op4_1',
-  },
-  {
-    label: 'El Espíritu lo llevó al desierto',
-    value: 'op4_2',
-  },
-  {
-    label: 'Fue arrestado',
-    value: 'op4_3',
-  },
-  {
-    label: 'Empezó a enseñar en el templo',
-    value: 'op4_4',
-  },
-])
-
-const options5 = ref([
-  {
-    label: '7',
-    value: 'op5_1',
-  },
-  {
-    label: '12',
-    value: 'op5_2',
-  },
-  {
-    label: '30',
-    value: 'op5_3',
-  },
-  {
-    label: '40',
-    value: 'op5_4',
-  },
-])
-
-const options6 = ref([
-  {
-    label: '“El Reino de Dios ha llegado; arrepiéntanse y crean en el evangelio.”',
-    value: 'op6_1',
-  },
-  {
-    label: '“Yo soy el pan de vida.”',
-    value: 'op6_2',
-  },
-  {
-    label: '“Bienaventurados los pobres.”',
-    value: 'op6_3',
-  },
-  {
-    label: '“Paz a ustedes.”',
-    value: 'op6_4',
-  },
-])
-
-const options7 = ref([
-  {
-    label: 'Mateo y Tomás',
-    value: 'op7_1',
-  },
-  {
-    label: 'Pedro y Juan',
-    value: 'op7_2',
-  },
-  {
-    label: 'Simón (Pedro) y Andrés',
-    value: 'op7_3',
-  },
-  {
-    label: 'Felipe y Bartolomé',
-    value: 'op7_4',
-  },
-])
-
-const findResponse = async (cap, question) => {
-  try {
-    const record = await db.marcos.where('[cap+question]').equals([cap, question]).first()
-    return (record && record.value) || null
-  } catch (error) {
-    console.error('Error buscando registro:', error)
-    return null
-  }
-}
-
 const loadResponse = async () => {
   try {
-    opt1.value = await findResponse(1, 1)
-    opt2.value = await findResponse(1, 2)
-    opt3.value = await findResponse(1, 3)
-    opt4.value = await findResponse(1, 4)
-    opt5.value = await findResponse(1, 5)
-    opt6.value = await findResponse(1, 6)
-    opt7.value = await findResponse(1, 7)
+    opt1.value = await findResponse(1, 1, 'marcos')
+    opt2.value = await findResponse(1, 2, 'marcos')
+    opt3.value = await findResponse(1, 3, 'marcos')
+    opt4.value = await findResponse(1, 4, 'marcos')
+    opt5.value = await findResponse(1, 5, 'marcos')
+    opt6.value = await findResponse(1, 6, 'marcos')
+    opt7.value = await findResponse(1, 7, 'marcos')
   } catch (error) {
     console.error('Error buscando registro:', error)
     return null
   }
 }
 
-const addResponse = async (cap, questionnum, resp) => {
-  const find = await findResponse(cap, questionnum)
-  if (find) {
-    try {
-      await db.marcos
-        .where('[cap+question]')
-        .equals([cap, questionnum])
-        .modify((record) => {
-          record.value = resp
-        })
-    } catch (error) {
-      console.error('Error en actualización con transformación:', error)
-    }
-  } else {
-    await db.marcos.add({
-      cap: cap,
-      question: questionnum,
-      value: resp,
-    })
-  }
+const enableBtOnLoad = async () => {
+  const caps = await countCaps(1, 'marcos')
+  if (caps === 7) emit('update:enableBtOnLoad', 1)
 }
 
-const handleSelectedOption = (questionnum, selectedValue) => {
+const handleSelectedOption = async (questionnum, selectedValue) => {
+  await addResponse(1, questionnum, selectedValue, 'marcos')
   emit('update:selectedOption', 1)
-  addResponse(1, questionnum, selectedValue)
   switch (questionnum) {
     case 1:
       opt1.value = selectedValue
@@ -295,14 +147,3 @@ const handleSelectedOption = (questionnum, selectedValue) => {
   }
 }
 </script>
-
-<style>
-.pregunta {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-.numero {
-  font-weight: bold;
-  margin-right: 5px;
-}
-</style>
