@@ -8,6 +8,7 @@
           @update:selectedOption="handleResult"
           @update:enableBtOnLoad="enableBtOnLoad"
         />
+        <q-separator />
         <q-stepper-navigation>
           <q-btn
             @click="
@@ -28,7 +29,7 @@
           @update:selectedOption="handleResult"
           @update:enableBtOnLoad="enableBtOnLoad"
         />
-
+        <q-separator />
         <q-stepper-navigation>
           <q-btn
             @click="
@@ -47,7 +48,7 @@
 
       <q-step :name="3" prefix="3" title="Cap. 3" caption="Marcos" :done="done3">
         An ad group contains one or more ads which target a shared set of keywords.
-
+        <q-separator />
         <q-stepper-navigation>
           <q-btn
             @click="
@@ -65,7 +66,7 @@
 
       <q-step :name="4" prefix="4" title="Cap. 4" caption="Marcos" :done="done4">
         An ad group contains one or more ads which target a shared set of keywords.
-
+        <q-separator />
         <q-stepper-navigation>
           <q-btn
             @click="
@@ -83,7 +84,7 @@
 
       <q-step :name="5" prefix="5" title="Cap. 5" caption="Marcos" :done="done5">
         An ad group contains one or more ads which target a shared set of keywords.
-
+        <q-separator />
         <q-stepper-navigation>
           <q-btn
             @click="
@@ -101,7 +102,7 @@
 
       <q-step :name="6" prefix="6" title="Cap. 6" caption="Marcos" :done="done6">
         An ad group contains one or more ads which target a shared set of keywords.
-
+        <q-separator />
         <q-stepper-navigation>
           <q-btn
             @click="
@@ -119,7 +120,7 @@
 
       <q-step :name="7" prefix="7" title="Cap. 7" caption="Marcos" :done="done7">
         An ad group contains one or more ads which target a shared set of keywords.
-
+        <q-separator />
         <q-stepper-navigation>
           <q-btn
             @click="
@@ -137,7 +138,7 @@
 
       <q-step :name="8" prefix="8" title="Cap. 8" caption="Marcos" :done="done8">
         An ad group contains one or more ads which target a shared set of keywords.
-
+        <q-separator />
         <q-stepper-navigation>
           <q-btn
             @click="
@@ -155,7 +156,7 @@
 
       <q-step :name="9" prefix="9" title="Cap. 9" caption="Marcos" :done="done9">
         An ad group contains one or more ads which target a shared set of keywords.
-
+        <q-separator />
         <q-stepper-navigation>
           <q-btn
             @click="
@@ -173,7 +174,7 @@
 
       <q-step :name="10" prefix="10" title="Cap. 10" caption="Marcos" :done="done10">
         An ad group contains one or more ads which target a shared set of keywords.
-
+        <q-separator />
         <q-stepper-navigation>
           <q-btn
             @click="
@@ -191,7 +192,7 @@
 
       <q-step :name="11" prefix="11" title="Cap. 11" caption="Marcos" :done="done11">
         An ad group contains one or more ads which target a shared set of keywords.
-
+        <q-separator />
         <q-stepper-navigation>
           <q-btn
             @click="
@@ -209,7 +210,7 @@
 
       <q-step :name="12" prefix="12" title="Cap. 12" caption="Marcos" :done="done12">
         An ad group contains one or more ads which target a shared set of keywords.
-
+        <q-separator />
         <q-stepper-navigation>
           <q-btn
             @click="
@@ -227,7 +228,7 @@
 
       <q-step :name="13" prefix="13" title="Cap. 13" caption="Marcos" :done="done13">
         An ad group contains one or more ads which target a shared set of keywords.
-
+        <q-separator />
         <q-stepper-navigation>
           <q-btn
             @click="
@@ -245,7 +246,7 @@
 
       <q-step :name="14" prefix="14" title="Cap. 14" caption="Marcos" :done="done14">
         An ad group contains one or more ads which target a shared set of keywords.
-
+        <q-separator />
         <q-stepper-navigation>
           <q-btn
             @click="
@@ -263,7 +264,7 @@
 
       <q-step :name="15" prefix="15" title="Cap. 15" caption="Marcos" :done="done15">
         An ad group contains one or more ads which target a shared set of keywords.
-
+        <q-separator />
         <q-stepper-navigation>
           <q-btn
             @click="
@@ -281,7 +282,7 @@
 
       <q-step :name="16" prefix="16" title="Cap. 16" caption="Marcos" :done="done16">
         FINAL
-
+        <q-separator />
         <q-stepper-navigation>
           <q-btn color="primary" @click="done16 = true" label="Finish" />
           <q-btn flat @click="step = 15" color="primary" label="Back" class="q-ml-sm" />
