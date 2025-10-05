@@ -4,6 +4,18 @@
 
     <q-stepper v-model="step" ref="stepper" color="primary" animated contracted>
       <q-step :name="1" prefix="1" title="Cap. 1" caption="Marcos" :done="done1">
+        <q-btn
+          @click="
+            () => {
+              done1 = true
+              step = 2
+            }
+          "
+          color="primary"
+          label="Continuar"
+          :disable="disbtn1"
+        />
+        <q-separator spaced="21px" />
         <MarcosEvang1
           @update:selectedOption="handleResult"
           @update:enableBtOnLoad="enableBtOnLoad"
@@ -25,6 +37,19 @@
       </q-step>
 
       <q-step :name="2" prefix="2" title="Cap. 2" caption="Marcos" :done="done2">
+        <q-btn
+          @click="
+            () => {
+              done2 = true
+              step = 3
+            }
+          "
+          color="primary"
+          label="Continue"
+          :disable="disbtn2"
+        />
+        <q-btn flat @click="step = 1" color="primary" label="Back" class="q-ml-sm" />
+        <q-separator spaced="21px" />
         <MarcosEvang2
           @update:selectedOption="handleResult"
           @update:enableBtOnLoad="enableBtOnLoad"
@@ -47,6 +72,18 @@
       </q-step>
 
       <q-step :name="3" prefix="3" title="Cap. 3" caption="Marcos" :done="done3">
+        <q-btn
+          @click="
+            () => {
+              done3 = true
+              step = 4
+            }
+          "
+          color="primary"
+          label="Continue"
+        />
+        <q-btn flat @click="step = 2" color="primary" label="Back" class="q-ml-sm" />
+        <q-separator spaced="21px" />
         <MarcosEvang3
           @update:selectedOption="handleResult"
           @update:enableBtOnLoad="enableBtOnLoad"
@@ -68,6 +105,18 @@
       </q-step>
 
       <q-step :name="4" prefix="4" title="Cap. 4" caption="Marcos" :done="done4">
+        <q-btn
+          @click="
+            () => {
+              done4 = true
+              step = 5
+            }
+          "
+          color="primary"
+          label="Continue"
+        />
+        <q-btn flat @click="step = 3" color="primary" label="Back" class="q-ml-sm" />
+        <q-separator spaced="21px" />
         <MarcosEvang4
           @update:selectedOption="handleResult"
           @update:enableBtOnLoad="enableBtOnLoad"
@@ -89,6 +138,18 @@
       </q-step>
 
       <q-step :name="5" prefix="5" title="Cap. 5" caption="Marcos" :done="done5">
+        <q-btn
+          @click="
+            () => {
+              done5 = true
+              step = 6
+            }
+          "
+          color="primary"
+          label="Continue"
+        />
+        <q-btn flat @click="step = 4" color="primary" label="Back" class="q-ml-sm" />
+        <q-separator spaced="21px" />
         <MarcosEvang5
           @update:selectedOption="handleResult"
           @update:enableBtOnLoad="enableBtOnLoad"
@@ -110,6 +171,18 @@
       </q-step>
 
       <q-step :name="6" prefix="6" title="Cap. 6" caption="Marcos" :done="done6">
+        <q-btn
+          @click="
+            () => {
+              done6 = true
+              step = 7
+            }
+          "
+          color="primary"
+          label="Continue"
+        />
+        <q-btn flat @click="step = 5" color="primary" label="Back" class="q-ml-sm" />
+        <q-separator spaced="21px" />
         <MarcosEvang6
           @update:selectedOption="handleResult"
           @update:enableBtOnLoad="enableBtOnLoad"
@@ -131,6 +204,18 @@
       </q-step>
 
       <q-step :name="7" prefix="7" title="Cap. 7" caption="Marcos" :done="done7">
+        <q-btn
+          @click="
+            () => {
+              done7 = true
+              step = 8
+            }
+          "
+          color="primary"
+          label="Continue"
+        />
+        <q-btn flat @click="step = 6" color="primary" label="Back" class="q-ml-sm" />
+        <q-separator spaced="21px" />
         <MarcosEvang7
           @update:selectedOption="handleResult"
           @update:enableBtOnLoad="enableBtOnLoad"
@@ -152,6 +237,18 @@
       </q-step>
 
       <q-step :name="8" prefix="8" title="Cap. 8" caption="Marcos" :done="done8">
+        <q-btn
+          @click="
+            () => {
+              done8 = true
+              step = 9
+            }
+          "
+          color="primary"
+          label="Continue"
+        />
+        <q-btn flat @click="step = 7" color="primary" label="Back" class="q-ml-sm" />
+        <q-separator spaced="21px" />
         <MarcosEvang8
           @update:selectedOption="handleResult"
           @update:enableBtOnLoad="enableBtOnLoad"
@@ -173,6 +270,18 @@
       </q-step>
 
       <q-step :name="9" prefix="9" title="Cap. 9" caption="Marcos" :done="done9">
+        <q-btn
+          @click="
+            () => {
+              done9 = true
+              step = 10
+            }
+          "
+          color="primary"
+          label="Continue"
+        />
+        <q-btn flat @click="step = 8" color="primary" label="Back" class="q-ml-sm" />
+        <q-separator spaced="21px" />
         <MarcosEvang9
           @update:selectedOption="handleResult"
           @update:enableBtOnLoad="enableBtOnLoad"
@@ -194,6 +303,18 @@
       </q-step>
 
       <q-step :name="10" prefix="10" title="Cap. 10" caption="Marcos" :done="done10">
+        <q-btn
+          @click="
+            () => {
+              done10 = true
+              step = 11
+            }
+          "
+          color="primary"
+          label="Continue"
+        />
+        <q-btn flat @click="step = 9" color="primary" label="Back" class="q-ml-sm" />
+        <q-separator spaced="21px" />
         <MarcosEvang10
           @update:selectedOption="handleResult"
           @update:enableBtOnLoad="enableBtOnLoad"
@@ -215,6 +336,18 @@
       </q-step>
 
       <q-step :name="11" prefix="11" title="Cap. 11" caption="Marcos" :done="done11">
+        <q-btn
+          @click="
+            () => {
+              done11 = true
+              step = 12
+            }
+          "
+          color="primary"
+          label="Continue"
+        />
+        <q-btn flat @click="step = 10" color="primary" label="Back" class="q-ml-sm" />
+        <q-separator spaced="21px" />
         <MarcosEvang11
           @update:selectedOption="handleResult"
           @update:enableBtOnLoad="enableBtOnLoad"
@@ -236,6 +369,18 @@
       </q-step>
 
       <q-step :name="12" prefix="12" title="Cap. 12" caption="Marcos" :done="done12">
+        <q-btn
+          @click="
+            () => {
+              done12 = true
+              step = 13
+            }
+          "
+          color="primary"
+          label="Continue"
+        />
+        <q-btn flat @click="step = 11" color="primary" label="Back" class="q-ml-sm" />
+        <q-separator spaced="21px" />
         <MarcosEvang12
           @update:selectedOption="handleResult"
           @update:enableBtOnLoad="enableBtOnLoad"
@@ -257,6 +402,18 @@
       </q-step>
 
       <q-step :name="13" prefix="13" title="Cap. 13" caption="Marcos" :done="done13">
+        <q-btn
+          @click="
+            () => {
+              done13 = true
+              step = 14
+            }
+          "
+          color="primary"
+          label="Continue"
+        />
+        <q-btn flat @click="step = 12" color="primary" label="Back" class="q-ml-sm" />
+        <q-separator spaced="21px" />
         <MarcosEvang13
           @update:selectedOption="handleResult"
           @update:enableBtOnLoad="enableBtOnLoad"
@@ -278,6 +435,18 @@
       </q-step>
 
       <q-step :name="14" prefix="14" title="Cap. 14" caption="Marcos" :done="done14">
+        <q-btn
+          @click="
+            () => {
+              done14 = true
+              step = 15
+            }
+          "
+          color="primary"
+          label="Continue"
+        />
+        <q-btn flat @click="step = 13" color="primary" label="Back" class="q-ml-sm" />
+        <q-separator spaced="21px" />
         <MarcosEvang14
           @update:selectedOption="handleResult"
           @update:enableBtOnLoad="enableBtOnLoad"
@@ -299,6 +468,18 @@
       </q-step>
 
       <q-step :name="15" prefix="15" title="Cap. 15" caption="Marcos" :done="done15">
+        <q-btn
+          @click="
+            () => {
+              done15 = true
+              step = 16
+            }
+          "
+          color="primary"
+          label="Continue"
+        />
+        <q-btn flat @click="step = 14" color="primary" label="Back" class="q-ml-sm" />
+        <q-separator spaced="21px" />
         <MarcosEvang15
           @update:selectedOption="handleResult"
           @update:enableBtOnLoad="enableBtOnLoad"
@@ -320,6 +501,9 @@
       </q-step>
 
       <q-step :name="16" prefix="16" title="Cap. 16" caption="Marcos" :done="done16">
+        <q-btn color="primary" @click="done16 = true" label="Finish" />
+        <q-btn flat @click="step = 15" color="primary" label="Back" class="q-ml-sm" />
+        <q-separator spaced="21px" />
         <MarcosEvang16
           @update:selectedOption="handleResult"
           @update:enableBtOnLoad="enableBtOnLoad"
