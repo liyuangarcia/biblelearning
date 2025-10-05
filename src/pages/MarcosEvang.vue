@@ -47,7 +47,10 @@
       </q-step>
 
       <q-step :name="3" prefix="3" title="Cap. 3" caption="Marcos" :done="done3">
-        An ad group contains one or more ads which target a shared set of keywords.
+        <MarcosEvang3
+          @update:selectedOption="handleResult"
+          @update:enableBtOnLoad="enableBtOnLoad"
+        />
         <q-separator />
         <q-stepper-navigation>
           <q-btn
@@ -65,7 +68,10 @@
       </q-step>
 
       <q-step :name="4" prefix="4" title="Cap. 4" caption="Marcos" :done="done4">
-        An ad group contains one or more ads which target a shared set of keywords.
+        <MarcosEvang4
+          @update:selectedOption="handleResult"
+          @update:enableBtOnLoad="enableBtOnLoad"
+        />
         <q-separator />
         <q-stepper-navigation>
           <q-btn
@@ -83,7 +89,10 @@
       </q-step>
 
       <q-step :name="5" prefix="5" title="Cap. 5" caption="Marcos" :done="done5">
-        An ad group contains one or more ads which target a shared set of keywords.
+        <MarcosEvang5
+          @update:selectedOption="handleResult"
+          @update:enableBtOnLoad="enableBtOnLoad"
+        />
         <q-separator />
         <q-stepper-navigation>
           <q-btn
@@ -101,7 +110,10 @@
       </q-step>
 
       <q-step :name="6" prefix="6" title="Cap. 6" caption="Marcos" :done="done6">
-        An ad group contains one or more ads which target a shared set of keywords.
+        <MarcosEvang6
+          @update:selectedOption="handleResult"
+          @update:enableBtOnLoad="enableBtOnLoad"
+        />
         <q-separator />
         <q-stepper-navigation>
           <q-btn
@@ -119,7 +131,10 @@
       </q-step>
 
       <q-step :name="7" prefix="7" title="Cap. 7" caption="Marcos" :done="done7">
-        An ad group contains one or more ads which target a shared set of keywords.
+        <MarcosEvang7
+          @update:selectedOption="handleResult"
+          @update:enableBtOnLoad="enableBtOnLoad"
+        />
         <q-separator />
         <q-stepper-navigation>
           <q-btn
@@ -137,7 +152,10 @@
       </q-step>
 
       <q-step :name="8" prefix="8" title="Cap. 8" caption="Marcos" :done="done8">
-        An ad group contains one or more ads which target a shared set of keywords.
+        <MarcosEvang8
+          @update:selectedOption="handleResult"
+          @update:enableBtOnLoad="enableBtOnLoad"
+        />
         <q-separator />
         <q-stepper-navigation>
           <q-btn
@@ -155,7 +173,10 @@
       </q-step>
 
       <q-step :name="9" prefix="9" title="Cap. 9" caption="Marcos" :done="done9">
-        An ad group contains one or more ads which target a shared set of keywords.
+        <MarcosEvang9
+          @update:selectedOption="handleResult"
+          @update:enableBtOnLoad="enableBtOnLoad"
+        />
         <q-separator />
         <q-stepper-navigation>
           <q-btn
@@ -173,7 +194,10 @@
       </q-step>
 
       <q-step :name="10" prefix="10" title="Cap. 10" caption="Marcos" :done="done10">
-        An ad group contains one or more ads which target a shared set of keywords.
+        <MarcosEvang10
+          @update:selectedOption="handleResult"
+          @update:enableBtOnLoad="enableBtOnLoad"
+        />
         <q-separator />
         <q-stepper-navigation>
           <q-btn
@@ -191,7 +215,10 @@
       </q-step>
 
       <q-step :name="11" prefix="11" title="Cap. 11" caption="Marcos" :done="done11">
-        An ad group contains one or more ads which target a shared set of keywords.
+        <MarcosEvang11
+          @update:selectedOption="handleResult"
+          @update:enableBtOnLoad="enableBtOnLoad"
+        />
         <q-separator />
         <q-stepper-navigation>
           <q-btn
@@ -209,7 +236,10 @@
       </q-step>
 
       <q-step :name="12" prefix="12" title="Cap. 12" caption="Marcos" :done="done12">
-        An ad group contains one or more ads which target a shared set of keywords.
+        <MarcosEvang12
+          @update:selectedOption="handleResult"
+          @update:enableBtOnLoad="enableBtOnLoad"
+        />
         <q-separator />
         <q-stepper-navigation>
           <q-btn
@@ -227,7 +257,10 @@
       </q-step>
 
       <q-step :name="13" prefix="13" title="Cap. 13" caption="Marcos" :done="done13">
-        An ad group contains one or more ads which target a shared set of keywords.
+        <MarcosEvang13
+          @update:selectedOption="handleResult"
+          @update:enableBtOnLoad="enableBtOnLoad"
+        />
         <q-separator />
         <q-stepper-navigation>
           <q-btn
@@ -245,7 +278,10 @@
       </q-step>
 
       <q-step :name="14" prefix="14" title="Cap. 14" caption="Marcos" :done="done14">
-        An ad group contains one or more ads which target a shared set of keywords.
+        <MarcosEvang14
+          @update:selectedOption="handleResult"
+          @update:enableBtOnLoad="enableBtOnLoad"
+        />
         <q-separator />
         <q-stepper-navigation>
           <q-btn
@@ -263,7 +299,10 @@
       </q-step>
 
       <q-step :name="15" prefix="15" title="Cap. 15" caption="Marcos" :done="done15">
-        An ad group contains one or more ads which target a shared set of keywords.
+        <MarcosEvang15
+          @update:selectedOption="handleResult"
+          @update:enableBtOnLoad="enableBtOnLoad"
+        />
         <q-separator />
         <q-stepper-navigation>
           <q-btn
@@ -281,7 +320,10 @@
       </q-step>
 
       <q-step :name="16" prefix="16" title="Cap. 16" caption="Marcos" :done="done16">
-        FINAL
+        <MarcosEvang16
+          @update:selectedOption="handleResult"
+          @update:enableBtOnLoad="enableBtOnLoad"
+        />
         <q-separator />
         <q-stepper-navigation>
           <q-btn color="primary" @click="done16 = true" label="Finish" />
@@ -296,6 +338,20 @@
 import { ref } from 'vue'
 import MarcosEvang1 from 'components/MarcosEvang1.vue'
 import MarcosEvang2 from 'components/MarcosEvang2.vue'
+import MarcosEvang3 from 'components/MarcosEvang3.vue'
+import MarcosEvang4 from 'components/MarcosEvang4.vue'
+import MarcosEvang5 from 'components/MarcosEvang5.vue'
+import MarcosEvang6 from 'components/MarcosEvang6.vue'
+import MarcosEvang7 from 'components/MarcosEvang7.vue'
+import MarcosEvang8 from 'components/MarcosEvang8.vue'
+import MarcosEvang9 from 'components/MarcosEvang9.vue'
+import MarcosEvang10 from 'components/MarcosEvang10.vue'
+import MarcosEvang11 from 'components/MarcosEvang11.vue'
+import MarcosEvang12 from 'components/MarcosEvang12.vue'
+import MarcosEvang13 from 'components/MarcosEvang13.vue'
+import MarcosEvang14 from 'components/MarcosEvang14.vue'
+import MarcosEvang15 from 'components/MarcosEvang15.vue'
+import MarcosEvang16 from 'components/MarcosEvang16.vue'
 import { Funcs } from 'src/others/funcs'
 
 const { countCaps } = Funcs()

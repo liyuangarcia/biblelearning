@@ -6,7 +6,7 @@
     <q-option-group
       :disable="disable"
       v-model="opt"
-      :options="props.options"
+      :options="randomizedOptions"
       @update:model-value="handleSelection"
     >
     </q-option-group>
@@ -19,7 +19,7 @@
 </template>
 
 <script setup>
-import { ref, watch } from 'vue'
+import { ref, computed, watch } from 'vue'
 
 const disable = ref(false)
 const opt = ref('')
@@ -47,6 +47,19 @@ const props = defineProps({
   selectedVal: {
     type: String,
   },
+})
+
+const randomizedOptions = computed(() => {
+  // Crear una copia del array para no mutar el original
+  const optionsCopy = [...props.options]
+
+  // Algoritmo de Fisher-Yates para mezclar aleatoriamente
+  for (let i = optionsCopy.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[optionsCopy[i], optionsCopy[j]] = [optionsCopy[j], optionsCopy[i]]
+  }
+
+  return optionsCopy
 })
 
 watch(
