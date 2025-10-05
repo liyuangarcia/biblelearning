@@ -81,6 +81,7 @@
           "
           color="primary"
           label="Continue"
+          :disable="disbtn3"
         />
         <q-btn flat @click="step = 2" color="primary" label="Back" class="q-ml-sm" />
         <q-separator spaced="21px" />
@@ -99,6 +100,7 @@
             "
             color="primary"
             label="Continue"
+            :disable="disbtn3"
           />
           <q-btn flat @click="step = 2" color="primary" label="Back" class="q-ml-sm" />
         </q-stepper-navigation>
@@ -114,6 +116,7 @@
           "
           color="primary"
           label="Continue"
+          :disable="disbtn4"
         />
         <q-btn flat @click="step = 3" color="primary" label="Back" class="q-ml-sm" />
         <q-separator spaced="21px" />
@@ -132,6 +135,7 @@
             "
             color="primary"
             label="Continue"
+            :disable="disbtn4"
           />
           <q-btn flat @click="step = 3" color="primary" label="Back" class="q-ml-sm" />
         </q-stepper-navigation>
@@ -147,6 +151,7 @@
           "
           color="primary"
           label="Continue"
+          :disable="disbtn5"
         />
         <q-btn flat @click="step = 4" color="primary" label="Back" class="q-ml-sm" />
         <q-separator spaced="21px" />
@@ -165,6 +170,7 @@
             "
             color="primary"
             label="Continue"
+            :disable="disbtn5"
           />
           <q-btn flat @click="step = 4" color="primary" label="Back" class="q-ml-sm" />
         </q-stepper-navigation>
@@ -180,6 +186,7 @@
           "
           color="primary"
           label="Continue"
+          :disable="disbtn6"
         />
         <q-btn flat @click="step = 5" color="primary" label="Back" class="q-ml-sm" />
         <q-separator spaced="21px" />
@@ -198,6 +205,7 @@
             "
             color="primary"
             label="Continue"
+            :disable="disbtn6"
           />
           <q-btn flat @click="step = 5" color="primary" label="Back" class="q-ml-sm" />
         </q-stepper-navigation>
@@ -213,6 +221,7 @@
           "
           color="primary"
           label="Continue"
+          :disable="disbtn7"
         />
         <q-btn flat @click="step = 6" color="primary" label="Back" class="q-ml-sm" />
         <q-separator spaced="21px" />
@@ -231,6 +240,7 @@
             "
             color="primary"
             label="Continue"
+            :disable="disbtn7"
           />
           <q-btn flat @click="step = 6" color="primary" label="Back" class="q-ml-sm" />
         </q-stepper-navigation>
@@ -246,6 +256,7 @@
           "
           color="primary"
           label="Continue"
+          :disable="disbtn8"
         />
         <q-btn flat @click="step = 7" color="primary" label="Back" class="q-ml-sm" />
         <q-separator spaced="21px" />
@@ -264,6 +275,7 @@
             "
             color="primary"
             label="Continue"
+            :disable="disbtn8"
           />
           <q-btn flat @click="step = 7" color="primary" label="Back" class="q-ml-sm" />
         </q-stepper-navigation>
@@ -279,6 +291,7 @@
           "
           color="primary"
           label="Continue"
+          :disable="disbtn9"
         />
         <q-btn flat @click="step = 8" color="primary" label="Back" class="q-ml-sm" />
         <q-separator spaced="21px" />
@@ -297,6 +310,7 @@
             "
             color="primary"
             label="Continue"
+            :disable="disbtn9"
           />
           <q-btn flat @click="step = 8" color="primary" label="Back" class="q-ml-sm" />
         </q-stepper-navigation>
@@ -312,6 +326,7 @@
           "
           color="primary"
           label="Continue"
+          :disable="disbtn10"
         />
         <q-btn flat @click="step = 9" color="primary" label="Back" class="q-ml-sm" />
         <q-separator spaced="21px" />
@@ -330,6 +345,7 @@
             "
             color="primary"
             label="Continue"
+            :disable="disbtn10"
           />
           <q-btn flat @click="step = 9" color="primary" label="Back" class="q-ml-sm" />
         </q-stepper-navigation>
@@ -345,6 +361,7 @@
           "
           color="primary"
           label="Continue"
+          :disable="disbtn11"
         />
         <q-btn flat @click="step = 10" color="primary" label="Back" class="q-ml-sm" />
         <q-separator spaced="21px" />
@@ -363,6 +380,7 @@
             "
             color="primary"
             label="Continue"
+            :disable="disbtn11"
           />
           <q-btn flat @click="step = 10" color="primary" label="Back" class="q-ml-sm" />
         </q-stepper-navigation>
@@ -378,6 +396,7 @@
           "
           color="primary"
           label="Continue"
+          :disable="disbtn12"
         />
         <q-btn flat @click="step = 11" color="primary" label="Back" class="q-ml-sm" />
         <q-separator spaced="21px" />
@@ -396,6 +415,7 @@
             "
             color="primary"
             label="Continue"
+            :disable="disbtn12"
           />
           <q-btn flat @click="step = 11" color="primary" label="Back" class="q-ml-sm" />
         </q-stepper-navigation>
@@ -411,6 +431,7 @@
           "
           color="primary"
           label="Continue"
+          :disable="disbtn13"
         />
         <q-btn flat @click="step = 12" color="primary" label="Back" class="q-ml-sm" />
         <q-separator spaced="21px" />
@@ -429,6 +450,7 @@
             "
             color="primary"
             label="Continue"
+            :disable="disbtn13"
           />
           <q-btn flat @click="step = 12" color="primary" label="Back" class="q-ml-sm" />
         </q-stepper-navigation>
@@ -444,6 +466,7 @@
           "
           color="primary"
           label="Continue"
+          :disable="disbtn14"
         />
         <q-btn flat @click="step = 13" color="primary" label="Back" class="q-ml-sm" />
         <q-separator spaced="21px" />
@@ -462,6 +485,7 @@
             "
             color="primary"
             label="Continue"
+            :disable="disbtn14"
           />
           <q-btn flat @click="step = 13" color="primary" label="Back" class="q-ml-sm" />
         </q-stepper-navigation>
@@ -477,6 +501,7 @@
           "
           color="primary"
           label="Continue"
+          :disable="disbtn15"
         />
         <q-btn flat @click="step = 14" color="primary" label="Back" class="q-ml-sm" />
         <q-separator spaced="21px" />
@@ -495,6 +520,7 @@
             "
             color="primary"
             label="Continue"
+            :disable="disbtn15"
           />
           <q-btn flat @click="step = 14" color="primary" label="Back" class="q-ml-sm" />
         </q-stepper-navigation>
@@ -541,8 +567,24 @@ import { Funcs } from 'src/others/funcs'
 const { countCaps } = Funcs()
 
 const step = ref(1)
+
 const disbtn1 = ref(true)
 const disbtn2 = ref(true)
+const disbtn3 = ref(true)
+const disbtn4 = ref(true)
+const disbtn5 = ref(true)
+const disbtn6 = ref(true)
+const disbtn7 = ref(true)
+const disbtn8 = ref(true)
+const disbtn9 = ref(true)
+const disbtn10 = ref(true)
+const disbtn11 = ref(true)
+const disbtn12 = ref(true)
+const disbtn13 = ref(true)
+const disbtn14 = ref(true)
+const disbtn15 = ref(true)
+const disbtn16 = ref(true)
+
 const done1 = ref(false)
 const done2 = ref(false)
 const done3 = ref(false)
@@ -567,8 +609,64 @@ const handleResult = async (cap) => {
     disbtn1.value = false
   }
 
-  if ((cap === 2) & (caps === 12)) {
+  if ((cap === 2) & (caps === 10)) {
     disbtn2.value = false
+  }
+
+  if ((cap === 3) & (caps === 10)) {
+    disbtn3.value = false
+  }
+
+  if ((cap === 4) & (caps === 10)) {
+    disbtn4.value = false
+  }
+
+  if ((cap === 5) & (caps === 10)) {
+    disbtn5.value = false
+  }
+
+  if ((cap === 6) & (caps === 10)) {
+    disbtn6.value = false
+  }
+
+  if ((cap === 7) & (caps === 10)) {
+    disbtn7.value = false
+  }
+
+  if ((cap === 8) & (caps === 10)) {
+    disbtn8.value = false
+  }
+
+  if ((cap === 9) & (caps === 10)) {
+    disbtn9.value = false
+  }
+
+  if ((cap === 10) & (caps === 10)) {
+    disbtn10.value = false
+  }
+
+  if ((cap === 11) & (caps === 10)) {
+    disbtn11.value = false
+  }
+
+  if ((cap === 12) & (caps === 10)) {
+    disbtn12.value = false
+  }
+
+  if ((cap === 13) & (caps === 10)) {
+    disbtn13.value = false
+  }
+
+  if ((cap === 14) & (caps === 10)) {
+    disbtn14.value = false
+  }
+
+  if ((cap === 15) & (caps === 10)) {
+    disbtn15.value = false
+  }
+
+  if ((cap === 16) & (caps === 10)) {
+    disbtn16.value = false
   }
 }
 
@@ -579,6 +677,48 @@ const enableBtOnLoad = (cap) => {
       break
     case 2:
       disbtn2.value = false
+      break
+    case 3:
+      disbtn3.value = false
+      break
+    case 4:
+      disbtn4.value = false
+      break
+    case 5:
+      disbtn5.value = false
+      break
+    case 6:
+      disbtn6.value = false
+      break
+    case 7:
+      disbtn7.value = false
+      break
+    case 8:
+      disbtn8.value = false
+      break
+    case 9:
+      disbtn9.value = false
+      break
+    case 10:
+      disbtn10.value = false
+      break
+    case 11:
+      disbtn11.value = false
+      break
+    case 12:
+      disbtn12.value = false
+      break
+    case 13:
+      disbtn13.value = false
+      break
+    case 14:
+      disbtn14.value = false
+      break
+    case 15:
+      disbtn15.value = false
+      break
+    case 16:
+      disbtn16.value = false
       break
 
     default:
