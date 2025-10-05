@@ -4,541 +4,573 @@
 
     <q-stepper v-model="step" ref="stepper" color="primary" animated contracted>
       <q-step :name="1" prefix="1" title="Cap. 1" caption="Marcos" :done="done1">
-        <q-btn
-          @click="
+        <PanelButtons
+          :clickContinue="
             () => {
               done1 = true
               step = 2
             }
           "
-          color="primary"
-          label="Continuar"
-          :disable="disbtn1"
+          :disableContinue="disbtn1"
+          :panelTop="true"
         />
-        <q-separator spaced="21px" />
         <MarcosEvang1
           @update:selectedOption="handleResult"
           @update:enableBtOnLoad="enableBtOnLoad"
         />
-        <q-separator />
-        <q-stepper-navigation>
-          <q-btn
-            @click="
-              () => {
-                done1 = true
-                step = 2
-              }
-            "
-            color="primary"
-            label="Continuar"
-            :disable="disbtn1"
-          />
-        </q-stepper-navigation>
+        <PanelButtons
+          :clickContinue="
+            () => {
+              done1 = true
+              step = 2
+            }
+          "
+          :disableContinue="disbtn1"
+        />
       </q-step>
 
       <q-step :name="2" prefix="2" title="Cap. 2" caption="Marcos" :done="done2">
-        <q-btn
-          @click="
+        <PanelButtons
+          :clickContinue="
             () => {
               done2 = true
               step = 3
             }
           "
-          color="primary"
-          label="Continue"
-          :disable="disbtn2"
+          :disableContinue="disbtn2"
+          :clickBack="
+            () => {
+              step = 1
+            }
+          "
+          :panelTop="true"
         />
-        <q-btn flat @click="step = 1" color="primary" label="Back" class="q-ml-sm" />
-        <q-separator spaced="21px" />
         <MarcosEvang2
           @update:selectedOption="handleResult"
           @update:enableBtOnLoad="enableBtOnLoad"
         />
-        <q-separator />
-        <q-stepper-navigation>
-          <q-btn
-            @click="
-              () => {
-                done2 = true
-                step = 3
-              }
-            "
-            color="primary"
-            label="Continue"
-            :disable="disbtn2"
-          />
-          <q-btn flat @click="step = 1" color="primary" label="Back" class="q-ml-sm" />
-        </q-stepper-navigation>
+        <PanelButtons
+          :clickContinue="
+            () => {
+              done2 = true
+              step = 3
+            }
+          "
+          :disableContinue="disbtn2"
+          :clickBack="
+            () => {
+              step = 1
+            }
+          "
+        />
       </q-step>
 
       <q-step :name="3" prefix="3" title="Cap. 3" caption="Marcos" :done="done3">
-        <q-btn
-          @click="
+        <PanelButtons
+          :clickContinue="
             () => {
               done3 = true
               step = 4
             }
           "
-          color="primary"
-          label="Continue"
-          :disable="disbtn3"
+          :disableContinue="disbtn3"
+          :clickBack="
+            () => {
+              step = 2
+            }
+          "
+          :panelTop="true"
         />
-        <q-btn flat @click="step = 2" color="primary" label="Back" class="q-ml-sm" />
-        <q-separator spaced="21px" />
+
         <MarcosEvang3
           @update:selectedOption="handleResult"
           @update:enableBtOnLoad="enableBtOnLoad"
         />
-        <q-separator />
-        <q-stepper-navigation>
-          <q-btn
-            @click="
-              () => {
-                done3 = true
-                step = 4
-              }
-            "
-            color="primary"
-            label="Continue"
-            :disable="disbtn3"
-          />
-          <q-btn flat @click="step = 2" color="primary" label="Back" class="q-ml-sm" />
-        </q-stepper-navigation>
+        <PanelButtons
+          :clickContinue="
+            () => {
+              done3 = true
+              step = 4
+            }
+          "
+          :disableContinue="disbtn3"
+          :clickBack="
+            () => {
+              step = 2
+            }
+          "
+        />
       </q-step>
 
       <q-step :name="4" prefix="4" title="Cap. 4" caption="Marcos" :done="done4">
-        <q-btn
-          @click="
+        <PanelButtons
+          :clickContinue="
             () => {
               done4 = true
               step = 5
             }
           "
-          color="primary"
-          label="Continue"
-          :disable="disbtn4"
+          :disableContinue="disbtn4"
+          :clickBack="
+            () => {
+              step = 3
+            }
+          "
+          :panelTop="true"
         />
-        <q-btn flat @click="step = 3" color="primary" label="Back" class="q-ml-sm" />
-        <q-separator spaced="21px" />
+
         <MarcosEvang4
           @update:selectedOption="handleResult"
           @update:enableBtOnLoad="enableBtOnLoad"
         />
-        <q-separator />
-        <q-stepper-navigation>
-          <q-btn
-            @click="
-              () => {
-                done4 = true
-                step = 5
-              }
-            "
-            color="primary"
-            label="Continue"
-            :disable="disbtn4"
-          />
-          <q-btn flat @click="step = 3" color="primary" label="Back" class="q-ml-sm" />
-        </q-stepper-navigation>
+        <PanelButtons
+          :clickContinue="
+            () => {
+              done4 = true
+              step = 5
+            }
+          "
+          :disableContinue="disbtn4"
+          :clickBack="
+            () => {
+              step = 3
+            }
+          "
+        />
       </q-step>
 
       <q-step :name="5" prefix="5" title="Cap. 5" caption="Marcos" :done="done5">
-        <q-btn
-          @click="
+        <PanelButtons
+          :clickContinue="
             () => {
               done5 = true
               step = 6
             }
           "
-          color="primary"
-          label="Continue"
-          :disable="disbtn5"
+          :disableContinue="disbtn5"
+          :clickBack="
+            () => {
+              step = 4
+            }
+          "
+          :panelTop="true"
         />
-        <q-btn flat @click="step = 4" color="primary" label="Back" class="q-ml-sm" />
-        <q-separator spaced="21px" />
         <MarcosEvang5
           @update:selectedOption="handleResult"
           @update:enableBtOnLoad="enableBtOnLoad"
         />
-        <q-separator />
-        <q-stepper-navigation>
-          <q-btn
-            @click="
-              () => {
-                done5 = true
-                step = 6
-              }
-            "
-            color="primary"
-            label="Continue"
-            :disable="disbtn5"
-          />
-          <q-btn flat @click="step = 4" color="primary" label="Back" class="q-ml-sm" />
-        </q-stepper-navigation>
+        <PanelButtons
+          :clickContinue="
+            () => {
+              done5 = true
+              step = 6
+            }
+          "
+          :disableContinue="disbtn5"
+          :clickBack="
+            () => {
+              step = 4
+            }
+          "
+        />
       </q-step>
 
       <q-step :name="6" prefix="6" title="Cap. 6" caption="Marcos" :done="done6">
-        <q-btn
-          @click="
+        <PanelButtons
+          :clickContinue="
             () => {
               done6 = true
               step = 7
             }
           "
-          color="primary"
-          label="Continue"
-          :disable="disbtn6"
+          :disableContinue="disbtn6"
+          :clickBack="
+            () => {
+              step = 5
+            }
+          "
+          :panelTop="true"
         />
-        <q-btn flat @click="step = 5" color="primary" label="Back" class="q-ml-sm" />
-        <q-separator spaced="21px" />
         <MarcosEvang6
           @update:selectedOption="handleResult"
           @update:enableBtOnLoad="enableBtOnLoad"
         />
-        <q-separator />
-        <q-stepper-navigation>
-          <q-btn
-            @click="
-              () => {
-                done6 = true
-                step = 7
-              }
-            "
-            color="primary"
-            label="Continue"
-            :disable="disbtn6"
-          />
-          <q-btn flat @click="step = 5" color="primary" label="Back" class="q-ml-sm" />
-        </q-stepper-navigation>
+        <PanelButtons
+          :clickContinue="
+            () => {
+              done6 = true
+              step = 7
+            }
+          "
+          :disableContinue="disbtn6"
+          :clickBack="
+            () => {
+              step = 5
+            }
+          "
+        />
       </q-step>
 
       <q-step :name="7" prefix="7" title="Cap. 7" caption="Marcos" :done="done7">
-        <q-btn
-          @click="
+        <PanelButtons
+          :clickContinue="
             () => {
               done7 = true
               step = 8
             }
           "
-          color="primary"
-          label="Continue"
-          :disable="disbtn7"
+          :disableContinue="disbtn7"
+          :clickBack="
+            () => {
+              step = 6
+            }
+          "
+          :panelTop="true"
         />
-        <q-btn flat @click="step = 6" color="primary" label="Back" class="q-ml-sm" />
-        <q-separator spaced="21px" />
         <MarcosEvang7
           @update:selectedOption="handleResult"
           @update:enableBtOnLoad="enableBtOnLoad"
         />
-        <q-separator />
-        <q-stepper-navigation>
-          <q-btn
-            @click="
-              () => {
-                done7 = true
-                step = 8
-              }
-            "
-            color="primary"
-            label="Continue"
-            :disable="disbtn7"
-          />
-          <q-btn flat @click="step = 6" color="primary" label="Back" class="q-ml-sm" />
-        </q-stepper-navigation>
+        <PanelButtons
+          :clickContinue="
+            () => {
+              done7 = true
+              step = 8
+            }
+          "
+          :disableContinue="disbtn7"
+          :clickBack="
+            () => {
+              step = 6
+            }
+          "
+        />
       </q-step>
 
       <q-step :name="8" prefix="8" title="Cap. 8" caption="Marcos" :done="done8">
-        <q-btn
-          @click="
+        <PanelButtons
+          :clickContinue="
             () => {
               done8 = true
               step = 9
             }
           "
-          color="primary"
-          label="Continue"
-          :disable="disbtn8"
+          :disableContinue="disbtn8"
+          :clickBack="
+            () => {
+              step = 7
+            }
+          "
+          :panelTop="true"
         />
-        <q-btn flat @click="step = 7" color="primary" label="Back" class="q-ml-sm" />
-        <q-separator spaced="21px" />
         <MarcosEvang8
           @update:selectedOption="handleResult"
           @update:enableBtOnLoad="enableBtOnLoad"
         />
-        <q-separator />
-        <q-stepper-navigation>
-          <q-btn
-            @click="
-              () => {
-                done8 = true
-                step = 9
-              }
-            "
-            color="primary"
-            label="Continue"
-            :disable="disbtn8"
-          />
-          <q-btn flat @click="step = 7" color="primary" label="Back" class="q-ml-sm" />
-        </q-stepper-navigation>
+        <PanelButtons
+          :clickContinue="
+            () => {
+              done8 = true
+              step = 9
+            }
+          "
+          :disableContinue="disbtn8"
+          :clickBack="
+            () => {
+              step = 7
+            }
+          "
+        />
       </q-step>
 
       <q-step :name="9" prefix="9" title="Cap. 9" caption="Marcos" :done="done9">
-        <q-btn
-          @click="
+        <PanelButtons
+          :clickContinue="
             () => {
               done9 = true
               step = 10
             }
           "
-          color="primary"
-          label="Continue"
-          :disable="disbtn9"
+          :disableContinue="disbtn9"
+          :clickBack="
+            () => {
+              step = 8
+            }
+          "
+          :panelTop="true"
         />
-        <q-btn flat @click="step = 8" color="primary" label="Back" class="q-ml-sm" />
-        <q-separator spaced="21px" />
+
         <MarcosEvang9
           @update:selectedOption="handleResult"
           @update:enableBtOnLoad="enableBtOnLoad"
         />
-        <q-separator />
-        <q-stepper-navigation>
-          <q-btn
-            @click="
-              () => {
-                done9 = true
-                step = 10
-              }
-            "
-            color="primary"
-            label="Continue"
-            :disable="disbtn9"
-          />
-          <q-btn flat @click="step = 8" color="primary" label="Back" class="q-ml-sm" />
-        </q-stepper-navigation>
+        <PanelButtons
+          :clickContinue="
+            () => {
+              done9 = true
+              step = 10
+            }
+          "
+          :disableContinue="disbtn9"
+          :clickBack="
+            () => {
+              step = 8
+            }
+          "
+        />
       </q-step>
 
       <q-step :name="10" prefix="10" title="Cap. 10" caption="Marcos" :done="done10">
-        <q-btn
-          @click="
+        <PanelButtons
+          :clickContinue="
             () => {
               done10 = true
               step = 11
             }
           "
-          color="primary"
-          label="Continue"
-          :disable="disbtn10"
+          :disableContinue="disbtn10"
+          :clickBack="
+            () => {
+              step = 9
+            }
+          "
+          :panelTop="true"
         />
-        <q-btn flat @click="step = 9" color="primary" label="Back" class="q-ml-sm" />
-        <q-separator spaced="21px" />
+
         <MarcosEvang10
           @update:selectedOption="handleResult"
           @update:enableBtOnLoad="enableBtOnLoad"
         />
-        <q-separator />
-        <q-stepper-navigation>
-          <q-btn
-            @click="
-              () => {
-                done10 = true
-                step = 11
-              }
-            "
-            color="primary"
-            label="Continue"
-            :disable="disbtn10"
-          />
-          <q-btn flat @click="step = 9" color="primary" label="Back" class="q-ml-sm" />
-        </q-stepper-navigation>
+        <PanelButtons
+          :clickContinue="
+            () => {
+              done10 = true
+              step = 11
+            }
+          "
+          :disableContinue="disbtn10"
+          :clickBack="
+            () => {
+              step = 9
+            }
+          "
+        />
       </q-step>
 
       <q-step :name="11" prefix="11" title="Cap. 11" caption="Marcos" :done="done11">
-        <q-btn
-          @click="
+        <PanelButtons
+          :clickContinue="
             () => {
               done11 = true
               step = 12
             }
           "
-          color="primary"
-          label="Continue"
-          :disable="disbtn11"
+          :disableContinue="disbtn11"
+          :clickBack="
+            () => {
+              step = 10
+            }
+          "
+          :panelTop="true"
         />
-        <q-btn flat @click="step = 10" color="primary" label="Back" class="q-ml-sm" />
-        <q-separator spaced="21px" />
+
         <MarcosEvang11
           @update:selectedOption="handleResult"
           @update:enableBtOnLoad="enableBtOnLoad"
         />
-        <q-separator />
-        <q-stepper-navigation>
-          <q-btn
-            @click="
-              () => {
-                done11 = true
-                step = 12
-              }
-            "
-            color="primary"
-            label="Continue"
-            :disable="disbtn11"
-          />
-          <q-btn flat @click="step = 10" color="primary" label="Back" class="q-ml-sm" />
-        </q-stepper-navigation>
+        <PanelButtons
+          :clickContinue="
+            () => {
+              done11 = true
+              step = 12
+            }
+          "
+          :disableContinue="disbtn11"
+          :clickBack="
+            () => {
+              step = 10
+            }
+          "
+        />
       </q-step>
 
       <q-step :name="12" prefix="12" title="Cap. 12" caption="Marcos" :done="done12">
-        <q-btn
-          @click="
+        <PanelButtons
+          :clickContinue="
             () => {
               done12 = true
               step = 13
             }
           "
-          color="primary"
-          label="Continue"
-          :disable="disbtn12"
+          :disableContinue="disbtn12"
+          :clickBack="
+            () => {
+              step = 11
+            }
+          "
+          :panelTop="true"
         />
-        <q-btn flat @click="step = 11" color="primary" label="Back" class="q-ml-sm" />
-        <q-separator spaced="21px" />
+
         <MarcosEvang12
           @update:selectedOption="handleResult"
           @update:enableBtOnLoad="enableBtOnLoad"
         />
-        <q-separator />
-        <q-stepper-navigation>
-          <q-btn
-            @click="
-              () => {
-                done12 = true
-                step = 13
-              }
-            "
-            color="primary"
-            label="Continue"
-            :disable="disbtn12"
-          />
-          <q-btn flat @click="step = 11" color="primary" label="Back" class="q-ml-sm" />
-        </q-stepper-navigation>
+        <PanelButtons
+          :clickContinue="
+            () => {
+              done12 = true
+              step = 13
+            }
+          "
+          :disableContinue="disbtn12"
+          :clickBack="
+            () => {
+              step = 11
+            }
+          "
+        />
       </q-step>
 
       <q-step :name="13" prefix="13" title="Cap. 13" caption="Marcos" :done="done13">
-        <q-btn
-          @click="
+        <PanelButtons
+          :clickContinue="
             () => {
               done13 = true
               step = 14
             }
           "
-          color="primary"
-          label="Continue"
-          :disable="disbtn13"
+          :disableContinue="disbtn13"
+          :clickBack="
+            () => {
+              step = 12
+            }
+          "
+          :panelTop="true"
         />
-        <q-btn flat @click="step = 12" color="primary" label="Back" class="q-ml-sm" />
-        <q-separator spaced="21px" />
+
         <MarcosEvang13
           @update:selectedOption="handleResult"
           @update:enableBtOnLoad="enableBtOnLoad"
         />
-        <q-separator />
-        <q-stepper-navigation>
-          <q-btn
-            @click="
-              () => {
-                done13 = true
-                step = 14
-              }
-            "
-            color="primary"
-            label="Continue"
-            :disable="disbtn13"
-          />
-          <q-btn flat @click="step = 12" color="primary" label="Back" class="q-ml-sm" />
-        </q-stepper-navigation>
+        <PanelButtons
+          :clickContinue="
+            () => {
+              done13 = true
+              step = 14
+            }
+          "
+          :disableContinue="disbtn13"
+          :clickBack="
+            () => {
+              step = 12
+            }
+          "
+        />
       </q-step>
 
       <q-step :name="14" prefix="14" title="Cap. 14" caption="Marcos" :done="done14">
-        <q-btn
-          @click="
+        <PanelButtons
+          :clickContinue="
             () => {
               done14 = true
               step = 15
             }
           "
-          color="primary"
-          label="Continue"
-          :disable="disbtn14"
+          :disableContinue="disbtn14"
+          :clickBack="
+            () => {
+              step = 13
+            }
+          "
+          :panelTop="true"
         />
-        <q-btn flat @click="step = 13" color="primary" label="Back" class="q-ml-sm" />
-        <q-separator spaced="21px" />
         <MarcosEvang14
           @update:selectedOption="handleResult"
           @update:enableBtOnLoad="enableBtOnLoad"
         />
-        <q-separator />
-        <q-stepper-navigation>
-          <q-btn
-            @click="
-              () => {
-                done14 = true
-                step = 15
-              }
-            "
-            color="primary"
-            label="Continue"
-            :disable="disbtn14"
-          />
-          <q-btn flat @click="step = 13" color="primary" label="Back" class="q-ml-sm" />
-        </q-stepper-navigation>
+        <PanelButtons
+          :clickContinue="
+            () => {
+              done14 = true
+              step = 15
+            }
+          "
+          :disableContinue="disbtn14"
+          :clickBack="
+            () => {
+              step = 13
+            }
+          "
+        />
       </q-step>
 
       <q-step :name="15" prefix="15" title="Cap. 15" caption="Marcos" :done="done15">
-        <q-btn
-          @click="
+        <PanelButtons
+          :clickContinue="
             () => {
               done15 = true
               step = 16
             }
           "
-          color="primary"
-          label="Continue"
-          :disable="disbtn15"
+          :disableContinue="disbtn15"
+          :clickBack="
+            () => {
+              step = 14
+            }
+          "
+          :panelTop="true"
         />
-        <q-btn flat @click="step = 14" color="primary" label="Back" class="q-ml-sm" />
-        <q-separator spaced="21px" />
+
         <MarcosEvang15
           @update:selectedOption="handleResult"
           @update:enableBtOnLoad="enableBtOnLoad"
         />
-        <q-separator />
-        <q-stepper-navigation>
-          <q-btn
-            @click="
-              () => {
-                done15 = true
-                step = 16
-              }
-            "
-            color="primary"
-            label="Continue"
-            :disable="disbtn15"
-          />
-          <q-btn flat @click="step = 14" color="primary" label="Back" class="q-ml-sm" />
-        </q-stepper-navigation>
+        <PanelButtons
+          :clickContinue="
+            () => {
+              done15 = true
+              step = 16
+            }
+          "
+          :disableContinue="disbtn15"
+          :clickBack="
+            () => {
+              step = 14
+            }
+          "
+        />
       </q-step>
 
       <q-step :name="16" prefix="16" title="Cap. 16" caption="Marcos" :done="done16">
-        <q-btn color="primary" @click="done16 = true" label="Finish" />
-        <q-btn flat @click="step = 15" color="primary" label="Back" class="q-ml-sm" />
-        <q-separator spaced="21px" />
+        <PanelButtons
+          :clickFinish="
+            () => {
+              done16 = true
+            }
+          "
+          :clickBack="
+            () => {
+              step = 15
+            }
+          "
+          :panelTop="true"
+        />
         <MarcosEvang16
           @update:selectedOption="handleResult"
           @update:enableBtOnLoad="enableBtOnLoad"
         />
-        <q-separator />
-        <q-stepper-navigation>
-          <q-btn color="primary" @click="done16 = true" label="Finish" />
-          <q-btn flat @click="step = 15" color="primary" label="Back" class="q-ml-sm" />
-        </q-stepper-navigation>
+        <PanelButtons
+          :clickFinish="
+            () => {
+              done16 = true
+            }
+          "
+          :clickBack="
+            () => {
+              step = 15
+            }
+          "
+        />
       </q-step>
     </q-stepper>
   </div>
@@ -546,6 +578,7 @@
 
 <script setup>
 import { ref } from 'vue'
+import PanelButtons from 'src/components/PanelButtons.vue'
 import MarcosEvang1 from 'components/MarcosEvang1.vue'
 import MarcosEvang2 from 'components/MarcosEvang2.vue'
 import MarcosEvang3 from 'components/MarcosEvang3.vue'
